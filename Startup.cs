@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Vue2Spa.Services;
 
 namespace Vue2Spa
 {
@@ -27,6 +28,9 @@ namespace Vue2Spa
         {
             // Add framework services.
             services.AddMvc();
+
+            // FDE
+            services.AddSingleton<ITodoItemService, FakeTodoItemService>();
 
             // Simple example with dependency injection for a data provider.
             services.AddSingleton<Providers.IWeatherProvider, Providers.WeatherProviderFake>();
