@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using MvcRelations.Models;
 
 namespace MvcRelations
 {
@@ -7,7 +8,7 @@ namespace MvcRelations
     /// </summary>
     public class MvcRelationsContext : DbContext
     {
-        public DbSet<TodoItem> TestItems {get; set;}
+        public DbSet<TodoItemModel> TestItems {get; set;}
 
        public MvcRelationsContext(DbContextOptions<MvcRelationsContext> options) : base(options){
            
@@ -16,5 +17,6 @@ namespace MvcRelations
             // Specify the path of the database here
             optionsBuilder.UseSqlite("Filename=./relationsDB.db");
         }
+
     }
 }

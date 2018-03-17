@@ -5,13 +5,21 @@ using Microsoft.Extensions.DependencyInjection;
 using MvcRelations;
 using MvcRelations.Models;
 
-namespace Vue2Spa.Controllers
+namespace MvcRelations.Controllers
 {
     public class HomeController : Controller
     {
         public HomeController(IServiceProvider serviceProvider){
-            var context = serviceProvider.GetRequiredService<DbContextOptions<MvcRelationsContext>>();
-            context.TestItems
+            var context = new MvcRelationsContext(serviceProvider.GetRequiredService<DbContextOptions<MvcRelationsContext>>());
+            context.TestItems.Add(new TodoItemModel{
+                Text = "test 1",
+                Completed = false
+            });
+            context.TestItems.Add(new TodoItemModel{
+                Text = "test 2",
+                Completed = true
+            });
+            context.SaveChanges();
         }
 
         public IActionResult Index()

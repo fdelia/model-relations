@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Vue2Spa.Services;
+using MvcRelations.Services;
 
-namespace Vue2Spa.Controllers
+namespace MvcRelations.Controllers
 {
     [Route("api/[controller]")]
     public class TodoController : Controller

@@ -6,10 +6,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using MvcRelations;
 using MvcRelations.Services;
 
-namespace Vue2Spa
+namespace MvcRelations
 {
     public class Startup
     {
@@ -37,7 +36,7 @@ namespace Vue2Spa
             services.AddSingleton<ITodoItemService, FakeTodoItemService>();
 
             // Simple example with dependency injection for a data provider.
-            services.AddSingleton<Providers.IWeatherProvider, Providers.WeatherProviderFake>();
+            // services.AddSingleton<Providers.IWeatherProvider, Providers.WeatherProviderFake>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
