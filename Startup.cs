@@ -2,10 +2,12 @@ using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Vue2Spa.Services;
+using MvcRelations;
+using MvcRelations.Services;
 
 namespace Vue2Spa
 {
@@ -30,6 +32,8 @@ namespace Vue2Spa
             services.AddMvc();
 
             // FDE
+            services.AddDbContext<MvcRelationsContext>(options =>
+            options.UseSqlite("Data Source=relationsDB.db"));
             services.AddSingleton<ITodoItemService, FakeTodoItemService>();
 
             // Simple example with dependency injection for a data provider.

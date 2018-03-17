@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Vue2Spa.Models;
+using MvcRelations.Models;
 
-namespace Vue2Spa.Services
+namespace MvcRelations.Services
 {
     public interface ITodoItemService
     {
