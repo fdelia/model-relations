@@ -1,9 +1,11 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
-namespace Vue2Spa.Models
+namespace MvcRelations.Models
 {
     public class TodoItemModel
     {
+        [Key]
         public Guid Id { get; set; }
 
         public string Text { get; set; }
