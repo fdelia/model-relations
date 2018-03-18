@@ -6,17 +6,18 @@ using MvcRelations.Models;
 
 namespace MvcRelations.Services
 {
-    public class FakeTodoItemService : ITodoItemService
+    public class FakeTodoItemService
     {
-        public Task<IEnumerable<TodoItemModel>> GetItems(string userId)
+        public Task GetItems(string userId)
         {
-            var todos = new List<TodoItemModel>
-            {
+            // var todos = new List<TodoItemModel>
+            // {
                 // new TodoItemModel { Text = "Learn Vue.js", Completed = 1 },
                 // new TodoItemModel { Text = "Learn ASP.NET Core" }
-            };
+            // };
 
-            return Task.FromResult(todos.AsEnumerable());
+            // return Task.FromResult(todos.AsEnumerable());
+            return null;; 
         }
 
         public Task AddItem(string userId, string text)
@@ -29,7 +30,7 @@ namespace MvcRelations.Services
             throw new NotImplementedException();
         }
 
-        public Task UpdateItem(string userId, Guid id, TodoItemModel updatedData)
+        public Task UpdateItem(string userId, Guid id)
         {
             throw new NotImplementedException();
         }

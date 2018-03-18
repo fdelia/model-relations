@@ -8,7 +8,9 @@ namespace MvcRelations
     /// </summary>
     public class MvcRelationsContext : DbContext
     {
-        public DbSet<TodoItemModel> TestItems {get; set;}
+        // public DbSet<TodoItemModel> TestItems {get; set;}
+        public DbSet<Node> Nodes {get; set;}
+        public DbSet<Edge> Edges {get; set;}
 
        public MvcRelationsContext(DbContextOptions<MvcRelationsContext> options) : base(options){
            
