@@ -10,10 +10,10 @@ namespace MvcRelations.Services
     {
         public Task<IEnumerable<TodoItemModel>> GetItems(string userId)
         {
-            var todos = new[]
+            var todos = new List<TodoItemModel>
             {
-                new TodoItemModel { Text = "Learn Vue.js", Completed = true },
-                new TodoItemModel { Text = "Learn ASP.NET Core" }
+                // new TodoItemModel { Text = "Learn Vue.js", Completed = 1 },
+                // new TodoItemModel { Text = "Learn ASP.NET Core" }
             };
 
             return Task.FromResult(todos.AsEnumerable());

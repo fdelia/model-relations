@@ -11,14 +11,14 @@ namespace MvcRelations.Controllers
     {
         public HomeController(IServiceProvider serviceProvider){
             var context = new MvcRelationsContext(serviceProvider.GetRequiredService<DbContextOptions<MvcRelationsContext>>());
-            context.TestItems.Add(new TodoItemModel{
-                Text = "test 1",
-                Completed = false
-            });
-            context.TestItems.Add(new TodoItemModel{
-                Text = "test 2",
-                Completed = true
-            });
+            // context.TestItems.Add(new TodoItemModel{
+            //     Text = "test 1",
+            //     Completed = false
+            // });
+            // context.TestItems.Add(new TodoItemModel{
+            //     Text = "test 2",
+            //     Completed = true
+            // });
             context.SaveChanges();
         }
 

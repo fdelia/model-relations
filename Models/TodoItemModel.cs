@@ -5,8 +5,13 @@ namespace MvcRelations.Models
 {
     public class TodoItemModel
     {
+        public TodoItemModel(){
+            Text = String.Empty;
+            Completed = false;
+        }
+
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         public string Text { get; set; }
 
