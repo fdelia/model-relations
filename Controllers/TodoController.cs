@@ -11,11 +11,11 @@ namespace MvcRelations.Controllers
     [Route("api/[controller]")]
     public class TodoController : Controller
             {
-        private readonly ITodoItemService _todoItemService;
+        // private readonly ITodoItemService _todoItemService;
 
-        public TodoController(ITodoItemService todoItemService)
+        public TodoController()
         {
-            _todoItemService = todoItemService;
+            // _todoItemService = todoItemService;
         }
 
         // Handles GET /api/todo
@@ -23,9 +23,9 @@ namespace MvcRelations.Controllers
         public async Task<IActionResult> GetAllTodos()
         {
             var userId = "123"; // TODO: Get actual user ID
-            var todos = await _todoItemService.GetItems(userId);
+            // var todos = await _todoItemService.GetItems(userId);
 
-            return Ok(todos);
+            return Ok(new List<string>()); // as Json
         }
     }
 }
