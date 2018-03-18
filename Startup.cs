@@ -33,7 +33,7 @@ namespace MvcRelations
             // FDE
             services.AddDbContext<MvcRelationsContext>(options =>
             options.UseSqlite("Data Source=relationsDB.db"));
-            services.AddSingleton<ITodoItemService, FakeTodoItemService>();
+            // services.AddSingleton<ITodoItemService, FakeTodoItemService>();
 
             // Simple example with dependency injection for a data provider.
             // services.AddSingleton<Providers.IWeatherProvider, Providers.WeatherProviderFake>();
